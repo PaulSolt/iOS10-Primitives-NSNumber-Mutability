@@ -16,7 +16,23 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+	// Play with code here
+	
+	// id = AnyObject (Swift)
+	// void * = AnyObject
+	// ARC = automatic reference counting
+	
+//	NSArray *numArray = [NSArray arrayWithObjects: 3, 4, 5, nil];
+	
+	NSNumber *three = [NSNumber numberWithInt:3];
+	NSNumber *four = [NSNumber numberWithInt:4];
+	NSNumber *five = [NSNumber numberWithInt:5];
+	
+	NSArray *numArray = [NSArray arrayWithObjects:three, four, five, nil];
+
+	printf("numArray: %s\n", numArray.description.UTF8String);
+
 }
 
 

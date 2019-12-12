@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "LSIPerson.h"
 
 @interface ViewController ()
 
@@ -25,15 +26,32 @@
 	
 //	NSArray *numArray = [NSArray arrayWithObjects: 3, 4, 5, nil];
 	
-	NSNumber *three = [NSNumber numberWithInt:3];
-	NSNumber *four = [NSNumber numberWithInt:4];
-	NSNumber *five = [NSNumber numberWithInt:5];
+//	NSNumber *three = @3; //[NSNumber numberWithInt:3];
+//	NSNumber *four = @4; //[NSNumber numberWithInt:4];
+//	NSNumber *five = @5; // [NSNumber numberWithInt:5];
 	
-	NSArray *numArray = [NSArray arrayWithObjects:three, four, five, nil];
-
+//	NSArray *numArray = [NSArray arrayWithObjects:three, four, five, nil];
+//	NSArray *numArray = [NSArray arrayWithObjects:@3, @4, @5, nil];
+	NSArray *numArray = @[@3, @4, @5, @3.14, @YES];
+	
 	printf("numArray: %s\n", numArray.description.UTF8String);
 
+	
+	double sum = [self calculateSum:@[@3.14, @400, @-25, @1000.1]];
+	printf("sum: %f\n", sum);
 }
+
+- (double)calculateSum:(NSArray *)array {
+    double total = 0;
+    for (NSNumber *number in array) {
+        total += number.doubleValue;
+    }
+    return total;
+}
+
+
+
+
 
 
 @end

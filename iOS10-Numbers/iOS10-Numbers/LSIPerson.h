@@ -10,7 +10,11 @@
 
 @interface LSIPerson : NSObject
 
-@property (nonatomic) NSString *name;
+
+// As a rule always use copy with NSString,
+// NSArray, NSDictionary, NSSet,
+
+@property (nonatomic, copy) NSString *name;
 
 - (instancetype)initWithName:(NSString *)name;
 

@@ -39,6 +39,28 @@
 	
 	double sum = [self calculateSum:@[@3.14, @400, @-25, @1000.1]];
 	printf("sum: %f\n", sum);
+	
+	// Mutability = readwrite
+	// immutability = readonly
+	
+	// let = immutable = constant
+	// var = mutable = variable
+	
+	NSMutableString *james = [@"James" mutableCopy];
+	LSIPerson *actor = [[LSIPerson alloc] initWithName:james];
+
+	NSLog(@"Actor: %@", actor.name);
+	
+	[james setString:@"David"];
+	
+	NSLog(@"Actor: %@", actor.name);
+	
+	actor.name = james;
+	
+	[james setString:@"Sam"];
+
+	NSLog(@"Actor: %@", actor.name);
+	
 }
 
 - (double)calculateSum:(NSArray *)array {
